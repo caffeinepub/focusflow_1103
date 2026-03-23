@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.875rem;
+
+    /* FocusFlow Dark Theme — forced dark */
+    --background: 0.115 0.012 242;
+    --foreground: 0.96 0.008 240;
+    --card: 0.17 0.014 242;
+    --card-foreground: 0.96 0.008 240;
+    --popover: 0.19 0.016 242;
+    --popover-foreground: 0.96 0.008 240;
+    --primary: 0.73 0.22 155;
+    --primary-foreground: 0.12 0.01 242;
+    --secondary: 0.22 0.018 242;
+    --secondary-foreground: 0.96 0.008 240;
+    --muted: 0.2 0.016 242;
+    --muted-foreground: 0.72 0.02 240;
+    --accent: 0.25 0.02 242;
+    --accent-foreground: 0.96 0.008 240;
+    --destructive: 0.61 0.19 25;
+    --destructive-foreground: 0.98 0 0;
+    --border: 0.24 0.02 242;
+    --input: 0.22 0.018 242;
+    --ring: 0.73 0.22 155;
+
+    /* Semantic priority colors */
+    --priority-high: 0.61 0.19 25;
+    --priority-medium: 0.68 0.14 65;
+    --priority-low: 0.7 0.19 155;
+
+    /* Sidebar */
+    --sidebar: 0.14 0.013 242;
+    --sidebar-foreground: 0.96 0.008 240;
+    --sidebar-primary: 0.73 0.22 155;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.22 0.018 242;
+    --sidebar-accent-foreground: 0.96 0.008 240;
+    --sidebar-border: 0.22 0.018 242;
+    --sidebar-ring: 0.73 0.22 155;
+
+    --chart-1: 0.55 0.22 260;
+    --chart-2: 0.73 0.22 155;
+    --chart-3: 0.65 0.18 300;
+    --chart-4: 0.68 0.14 65;
+    --chart-5: 0.61 0.19 25;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: oklch(0.28 0.02 242);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.35 0.02 242);
+  }
+}
+
+@layer utilities {
+  .gradient-blue-cyan {
+    background: linear-gradient(
+      135deg,
+      oklch(0.45 0.22 255) 0%,
+      oklch(0.65 0.18 195) 100%
+    );
+  }
+  .gradient-purple-pink {
+    background: linear-gradient(
+      135deg,
+      oklch(0.45 0.22 295) 0%,
+      oklch(0.62 0.2 340) 100%
+    );
+  }
+  .gradient-red-purple {
+    background: linear-gradient(
+      135deg,
+      oklch(0.52 0.22 20) 0%,
+      oklch(0.48 0.22 295) 100%
+    );
+  }
+  .gradient-teal-green {
+    background: linear-gradient(
+      135deg,
+      oklch(0.6 0.18 185) 0%,
+      oklch(0.68 0.2 150) 100%
+    );
+  }
+  .card-surface {
+    background: oklch(var(--card));
+    border: 1px solid oklch(var(--border));
+  }
+}
